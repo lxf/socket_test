@@ -30,6 +30,13 @@
       socket.on('chat', function(msg){
         $('#messages').append($('<li>').text(msg));
       });
+      
+      socket.on('f_assignGuest',function (res) {
+        if(res.success)
+        {
+          $('#messages').append('<li>新用户加入:'+res.name+'</li>');
+        }
+      })
     </script>
   </body>
 </html>
